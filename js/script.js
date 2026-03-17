@@ -1,82 +1,87 @@
 function openTab(id){
 
-    let subjects = document.querySelectorAll(".subject");
-    let tabs = document.querySelectorAll(".tab");
+let subjects=document.querySelectorAll(".subject");
+let tabs=document.querySelectorAll(".tab");
 
-    subjects.forEach(s => s.classList.remove("active"));
-    tabs.forEach(t => t.classList.remove("active"));
+subjects.forEach(s=>s.classList.remove("active"));
+tabs.forEach(t=>t.classList.remove("active"));
 
-    document.getElementById(id).classList.add("active");
-    document.getElementById("tab_" + id).classList.add("active");
+document.getElementById(id).classList.add("active");
+document.getElementById("tab_"+id).classList.add("active");
+
 }
 
 function addChapter(subjectId){
 
-    let name = prompt("Tên chương:");
-    if(!name) return;
+let name=prompt("Tên chương:");
 
-    let chapter = document.createElement("div");
-    chapter.className = "chapter";
+if(!name) return;
 
-    let title = document.createElement("h3");
-    title.innerText = name;
+let chapter=document.createElement("div");
+chapter.className="chapter";
 
-    let btn = document.createElement("button");
-    btn.innerText = "Thêm công thức";
+let title=document.createElement("h3");
+title.innerText=name;
 
-    btn.onclick = function(){
-        addNote(chapter);
-    }
+let btn=document.createElement("button");
+btn.innerText="Thêm công thức";
 
-    chapter.appendChild(title);
-    chapter.appendChild(btn);
+btn.onclick=function(){
+addNote(chapter);
+}
 
-    document.getElementById(subjectId).appendChild(chapter);
+chapter.appendChild(title);
+chapter.appendChild(btn);
+
+document.getElementById(subjectId).appendChild(chapter);
+
 }
 
 function addNote(chapter){
 
-    let text = prompt("Nhập công thức:");
-    if(!text) return;
+let text=prompt("Nhập công thức:");
 
-    let source = prompt("Nguồn:");
+if(!text) return;
 
-    let note = document.createElement("div");
-    note.className = "note";
+let source=prompt("Nguồn:");
 
-    let p = document.createElement("p");
-    p.innerText = text;
+let note=document.createElement("div");
+note.className="note";
 
-    let s = document.createElement("div");
-    s.style.color = "gray";
-    s.style.fontSize = "14px";
-    s.innerText = "Nguồn: " + (source ? source : "Không rõ");
+let p=document.createElement("p");
+p.innerText=text;
 
-    let controls = document.createElement("div");
-    controls.className = "controls";
+let s=document.createElement("div");
+s.style.color="gray";
+s.style.fontSize="14px";
+s.innerText="Nguồn: "+(source?source:"Không rõ");
 
-    let edit = document.createElement("button");
-    edit.innerText = "Sửa";
+let controls=document.createElement("div");
+controls.className="controls";
 
-    edit.onclick = function(){
-        let newText = prompt("Sửa:", p.innerText);
-        if(newText) p.innerText = newText;
-    }
+let edit=document.createElement("button");
+edit.innerText="Sửa";
 
-    let del = document.createElement("button");
-    del.innerText = "Xóa";
-    del.className = "delete";
+edit.onclick=function(){
+let newText=prompt("Sửa:",p.innerText);
+if(newText) p.innerText=newText;
+}
 
-    del.onclick = function(){
-        note.remove();
-    }
+let del=document.createElement("button");
+del.innerText="Xóa";
+del.className="delete";
 
-    controls.appendChild(edit);
-    controls.appendChild(del);
+del.onclick=function(){
+note.remove();
+}
 
-    note.appendChild(p);
-    note.appendChild(s);
-    note.appendChild(controls);
+controls.appendChild(edit);
+controls.appendChild(del);
 
-    chapter.appendChild(note);
+note.appendChild(p);
+note.appendChild(s);
+note.appendChild(controls);
+
+chapter.appendChild(note);
+
 }

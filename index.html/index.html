@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Sổ Công Thức</title>
+<title>Sổ Ghi Chú Công Thức</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -10,16 +10,23 @@
 
 <body>
 
+<!-- TIÊU ĐỀ -->
 <h1>📘 Sổ Ghi Chú Công Thức</h1>
 
+<!-- TABS -->
 <div class="tabs">
 
 <div class="tab active" id="tab_toan" onclick="openTab('toan')">📐 Toán</div>
+
 <div class="tab" id="tab_ly" onclick="openTab('ly')">⚡ Vật Lý</div>
+
 <div class="tab" id="tab_hoa" onclick="openTab('hoa')">🧪 Hóa</div>
+
 <div class="tab" id="tab_anh" onclick="openTab('anh')">🇬🇧 Anh</div>
 
 </div>
+
+<!-- NỘI DUNG -->
 
 <div class="subject active" id="toan">
 <button class="addChapter" onclick="addChapter('toan')">+ Thêm chương</button>
@@ -37,6 +44,7 @@
 <button class="addChapter" onclick="addChapter('anh')">+ Thêm chương</button>
 </div>
 
+<!-- JS -->
 <script src="js/script.js"></script>
 
 </body>

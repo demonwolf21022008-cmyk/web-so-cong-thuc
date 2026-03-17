@@ -13,7 +13,7 @@ document.getElementById("tab_"+id).classList.add("active");
 
 function addChapter(subjectId){
 
-let name=prompt("Tên chuong:");
+let name=prompt("TÃªn chuong:");
 if(!name) return;
 
 let chapter=document.createElement("div");
@@ -23,7 +23,7 @@ let title=document.createElement("h3");
 title.innerText=name;
 
 let btn=document.createElement("button");
-btn.innerText="Thêm công th?c";
+btn.innerText="ThÃªm cÃ´ng th?c";
 
 btn.onclick=function(){
 addNote(chapter);
@@ -38,7 +38,7 @@ document.getElementById(subjectId).appendChild(chapter);
 
 function addNote(chapter){
 
-let text=prompt("Nh?p công th?c:");
+let text=prompt("Nh?p cÃ´ng th?c:");
 if(!text) return;
 
 let source=prompt("Ngu?n:");
@@ -52,7 +52,7 @@ p.innerText=text;
 let s=document.createElement("div");
 s.style.color="gray";
 s.style.fontSize="14px";
-s.innerText="Ngu?n: "+(source?source:"Không rõ");
+s.innerText="Ngu?n: "+(source?source:"KhÃ´ng rÃµ");
 
 let controls=document.createElement("div");
 controls.className="controls";
@@ -66,7 +66,7 @@ if(newText) p.innerText=newText;
 }
 
 let del=document.createElement("button");
-del.innerText="Xóa";
+del.innerText="XÃ³a";
 del.className="delete";
 
 del.onclick=function(){
